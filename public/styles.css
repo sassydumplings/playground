@@ -1,0 +1,16 @@
+h1 {
+	color:blue;
+	font-family: arial;
+	margin: 0 auto 20px 0;
+}
+
+p {
+	background-color: lightblue;
+	width: 400px;
+	font-size: 20px;
+	margin: 0 auto;
+}
+
+#mainpage {
+	   /*background-image: url(/Carpet-of-rubies3.png)*/
+}

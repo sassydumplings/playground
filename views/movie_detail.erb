@@ -1,0 +1,12 @@
+<!-- 
+<div>
+<%= @movie.inspect %>
+</div> -->
+
+
+<div>
+	<%=@movie.title%>  was released in <%= @movie.year %>.
+	The Rotten Tomato meter is <%=@movie.tomato.meter%>
+	
+	<img src="<%= @movie.poster %>">
+</div>

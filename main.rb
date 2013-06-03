@@ -32,16 +32,19 @@ require "movies"
 require "stock_quote"
 require "image_suckr"
 
+
 get "/" do 
   erb :index
 end
 
 get "/movies" do 
+
   erb :movies
 end
 
-get "/movie_details" do 
-    @movie = Movies.find_by_title(params['movie'], {tomatoes: "true"})
+get "/movie_detail" do 
+  
+  @movie = Movies.find_by_title(params['movie'], {tomatoes: "true"})
   erb :movie_detail
 end
 
@@ -50,9 +53,12 @@ get "/stock_quote" do
 end
 
 get "/stock_detail" do 
-  @stocks = StockQuote::Stock.quote(params[:stock])
-
-  erb :stock_detail
+    begin
+    @stocks = StockQuote::Stock.quote(params[:stock])
+    erb :stock_detail
+  rescue
+     erb :stock_quote
+  end
 end
 
 get "/image_suckr" do 
